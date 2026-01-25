@@ -1,11 +1,11 @@
 # Project Blindsight
-This is a project to create technology that enables a blind person a navigate 3-dimensional spaces.
+This is a project to create technology that enables a blind person to navigate 3-dimensional spaces.
 
 The system operates by mapping spatial data derived from a depth sensor to multiple orthogonal properties of sound, enabling the user to infer three-dimensional structure through auditory perception.
 
 The project will combine several technologies into a package to accomplish its goal:
 1. A depth sensor/Lidar, such as the Orbbec Femoto Bolt
-2. A logic board for processing signals from the sensor, such as a Raspberry Pi or ESP32
+2. A logic board/computer; for processing signals from the sensor, such as a Raspberry Pi or ESP32
 3. A listening device for the user, such as headphones
 
 Those components will be combined in a way that creates a wearable device for the user. There will obviously be additional components such as a battery so that the device will have enough power to run for an extended period of time, adjustable strap, a camera (for tasks like determining colors), and padding so that the wearable device will be comfortable. See the image below for an example render of what the device might look like:
@@ -20,7 +20,7 @@ As for how the device functions, the logic board receives information from the L
 There are 5 different properties of sound that we can use:
 1. Volume: Measures distance. The louder an object is, the closer it is to the user.
 2. Pitch: The Y-Axis of the field of vision. Pitch is the "notes" you would see on a piece of sheet music. Pitches such as A, B, C, D, E, F, and G would form an octave, and multiple octaves could be used to define the Y-Axis. A lower note, like a Low-C would register as being lower vertically in the user's field of vision. A high note, like a High-E would register as higher in the user's field of vision.
-3. Timing: The X-Axis of the field of vision. The X-Axis will periodically scan from left to right, kind of like a radar. This temporal scanning encodes horizontal position as a function of time.
+3. Timing: The X-Axis of the field of vision. The X-Axis is encoded temporally, scanning from left to right like a radar sweep. This temporal scanning encodes horizontal position as a function of time.
 4. Timbre: Potentially used for color. Timbre can be thought of as the audio equivalent of color; it is the property of sound that allows the listener to distinguish between a violin and a trumpet.
 5. Tone: Potentially used for texture. Tone is the "quality" of the sound, so a clear tone could signify a smooth surface, whereas a fuzzy tone could signify a furry surface.
 
