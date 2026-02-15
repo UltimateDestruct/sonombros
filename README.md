@@ -1,11 +1,11 @@
-# Project Blindsight
-This is a project to create technology that enables a blind person to navigate 3-dimensional spaces.
+# Sonombros
+Sonombros is a portmanteau inspired by the Latin roots _sonus_ (sound) and _umbra_ (shadow), roughly translating to "shadow sound" or "sound in the darkness." It is a project to create technology that enables a blind person to navigate three-dimensional spaces.
 
 The system operates by mapping spatial data derived from a depth sensor to multiple orthogonal properties of sound, enabling the user to infer three-dimensional structure through auditory perception.
 
 The project will combine several technologies into a package to accomplish its goal:
 1. A depth sensor/Lidar, such as the Orbbec Femoto Bolt
-2. A logic board/computer; for processing signals from the sensor, such as a Raspberry Pi or ESP32
+2. A logic board/computer, for processing signals from the sensor, such as a Raspberry Pi or ESP32
 3. A listening device for the user, such as headphones
 
 Those components will be combined in a way that creates a wearable device for the user. There will obviously be additional components such as a battery so that the device will have enough power to run for an extended period of time, adjustable strap, a camera (for tasks like determining colors), and padding so that the wearable device will be comfortable. See the image below for an example render of what the device might look like:
@@ -20,7 +20,7 @@ As for how the device functions, the logic board receives information from the L
 There are 5 different properties of sound that we can use:
 1. Volume: Measures distance. The louder an object is, the closer it is to the user.
 2. Pitch: The Y-Axis of the field of vision. Pitch is the "notes" you would see on a piece of sheet music. Pitches such as A, B, C, D, E, F, and G would form an octave, and multiple octaves could be used to define the Y-Axis. A lower note, like a Low-C would register as being lower vertically in the user's field of vision. A high note, like a High-E would register as higher in the user's field of vision.
-3. Timing: The X-Axis of the field of vision. The X-Axis is encoded temporally, scanning from left to right like a radar sweep. This temporal scanning encodes horizontal position as a function of time. An advanced implimentation of the X-Axis would also have a surround-sound-like quality of positioning the sound in the left or right ear as the scan moves from left to right.
+3. Timing: The X-Axis of the field of vision. The X-Axis is encoded temporally, scanning from left to right like a radar sweep. This temporal scanning encodes horizontal position as a function of time. An advanced implementation of the X-Axis would also have a surround-sound-like quality of positioning the sound in the left or right ear as the scan moves from left to right.
 4. Timbre: Potentially used for color. Timbre can be thought of as the audio equivalent of color; it is the property of sound that allows the listener to distinguish between a violin and a trumpet.
 5. Tone: Potentially used for texture. Tone is the "quality" of the sound, so a clear tone could signify a smooth surface, whereas a fuzzy tone could signify a furry surface.
 
@@ -46,12 +46,12 @@ Or even looking down at your own legs or feet; the device follows your field of 
 
 The device should allow for various configuration options:
 - Adjust the volume (preferably a low enough volume that the user can still listen to conversations or ambient sounds).
-- The speed of the X-Axis: Users who are beginning to use the device may need to turn down the scan rate of the X-Axis so that they can interpret the information. Experienced users will likely speed up the scan rate, similar to how visually impared users turn up the speed of screen readers.
+- The speed of the X-Axis: Users who are beginning to use the device may need to turn down the scan rate of the X-Axis so that they can interpret the information. Experienced users will likely speed up the scan rate, similar to how visually impaired users turn up the speed of screen readers.
 - The Y-Axis range: A higher amount of notes should give a higher fidelity to the vertical field of vision, but there are various factors that can affect the ability to hear notes on the extreme high or extreme low areas of the scale, so the user should be able to adjust the range of the Y-Axis accordingly.
 
 ## How color works with the device
 
-For color, Project Blindsight uses HSV (Hue, Saturation, Value) colors and converts them into sound using specific instrument "personalities." For example, hues could be arranged like this:
+For color, Sonombros uses HSV (Hue, Saturation, Value) colors and converts them into sound using specific instrument "personalities." For example, hues could be arranged like this:
 
 ### Hue
 
@@ -63,13 +63,13 @@ The different hues mapped to the Y-Axis could be mapped to different instruments
 
 ### Saturation
 
-You can think of saturation as the level of vibrant color vs how washed out it is. As for how this interacts with color in Project Blindsight, this could be represented by the sound of a voice.
+You can think of saturation as the level of vibrant color vs how washed out it is. As for how this interacts with color in Sonombros, this could be represented by the sound of a voice.
 
 ### Value
 
 Value is the amount of brightness vs darkness. This would be represented by a sound like a piano (or possibly a gong).
 
-HSV can be imagined as a cone, but it's easier to imagine it as 3 sliders (Hue, Saturation, and Value). The values on here can be mapped to Hexidecimal values that are often used for digital colors.
+HSV can be imagined as a cone, but it's easier to imagine it as 3 sliders (Hue, Saturation, and Value). The values on here can be mapped to Hexadecimal values that are often used for digital colors.
 
 Here are a few examples of what that might look and sound like:
 
